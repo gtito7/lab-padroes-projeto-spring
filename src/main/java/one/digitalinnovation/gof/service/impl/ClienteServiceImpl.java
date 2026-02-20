@@ -79,9 +79,9 @@ public class ClienteServiceImpl implements ClienteService {
     // INSERIR
     // =========================
     @Override
-    public void inserir(Cliente cliente) {
+    public Cliente inserir(Cliente cliente) {
         log.info("Inserindo cliente");
-        return;
+        return salvarClienteComCep(cliente);
     }
 
     // =========================
