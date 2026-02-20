@@ -1,6 +1,7 @@
 package one.digitalinnovation.gof.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,8 +30,8 @@ public class ClienteRestController {
 	private ClienteService clienteService;
 
 	@GetMapping
-	public ResponseEntity<Iterable<Cliente>> buscarTodos() {
-		return ResponseEntity.ok(clienteService.buscarTodos());
+	public ResponseEntity<Iterable<Cliente>> buscarTodos(Pageable pageable) {
+		return ResponseEntity.ok(clienteService.buscarTodos(pageable));
 	}
 
 	@GetMapping("/{id}")

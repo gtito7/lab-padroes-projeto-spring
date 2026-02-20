@@ -1,5 +1,7 @@
 package one.digitalinnovation.gof.service;
 
+import org.springframework.data.domain.Pageable;
+
 import one.digitalinnovation.gof.model.Cliente;
 
 /**
@@ -11,7 +13,7 @@ import one.digitalinnovation.gof.model.Cliente;
  */
 public interface ClienteService {
 
-	Iterable<Cliente> buscarTodos();
+	Iterable<Cliente> buscarTodos(Pageable pageable);
 
 	Cliente buscarPorId(Long id);
 
@@ -20,5 +22,7 @@ public interface ClienteService {
 	void atualizar(Long id, Cliente cliente);
 
 	void deletar(Long id);
+
+	Iterable<Cliente> buscarTodos();
 
 }
